@@ -43,8 +43,7 @@ for k in range(0,len(kudos)):
         if athlete == 'Nate Treble':
             print('Nate hates bots so no kudos for him')
         else:    
-            pass
-            # ActionChains(driver).move_to_element(kudos[k]).click().perform()
+            ActionChains(driver).move_to_element(kudos[k]).click().perform()
         
 time.sleep(2)
 
@@ -57,8 +56,7 @@ for k in range(0,len(first_kudos)):
         print('Nate hates bots so no kudos for him')
     else:    
         try:
-            pass
-            # ActionChains(driver).move_to_element(first_kudos[k]).click().perform()
+            ActionChains(driver).move_to_element(first_kudos[k]).click().perform()
         except:
             break
         
