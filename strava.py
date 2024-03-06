@@ -38,23 +38,27 @@ kudos = driver.find_elements(By.XPATH, "//button[@title='Give kudos']")
 print("Kudos count is {}".format(len(kudos)))
 for k in range(0,len(kudos)):
     if kudos[k].is_displayed():
-        athlete = get_athlete_name(kudos[k])[k].get_attribute('text')
+        athlete = get_athlete_name(kudos[k])
+        print(athlete)
         if athlete == 'Nate Treble':
             print('Nate hates bots so no kudos for him')
         else:    
-            ActionChains(driver).move_to_element(kudos[k]).click().perform()
+            pass
+            # ActionChains(driver).move_to_element(kudos[k]).click().perform()
         
 time.sleep(2)
 
 first_kudos = driver.find_elements(By.XPATH, "//button[@title='Be the first to give kudos!']")
 print("First Kudos count is {}".format(len(first_kudos)))
 for k in range(0,len(first_kudos)):
-    athlete = get_athlete_name(kudos[k])[k].get_attribute('text')
+    athlete = get_athlete_name(kudos[k])
+    print(athlete)
     if athlete == 'Nate Treble':
         print('Nate hates bots so no kudos for him')
     else:    
         try:
-            ActionChains(driver).move_to_element(first_kudos[k]).click().perform()
+            pass
+            # ActionChains(driver).move_to_element(first_kudos[k]).click().perform()
         except:
             break
         
