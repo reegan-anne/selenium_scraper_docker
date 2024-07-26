@@ -12,16 +12,16 @@ from func import get_athlete_name
 
 load_dotenv()
 
-# Generate a random number of seconds between 0 and 600 (10 minutes)
-wait_time_seconds = random.uniform(0, 600)
+# # Generate a random number of seconds between 0 and 600 (10 minutes)
+# wait_time_seconds = random.uniform(0, 60)
 
-# Print the wait time for reference
-print(f"Waiting for {wait_time_seconds:.2f} seconds ({wait_time_seconds/60:.2f} minutes)")
+# # Print the wait time for reference
+# print(f"Waiting for {wait_time_seconds:.2f} seconds ({wait_time_seconds/60:.2f} minutes)")
 
-# Wait for the generated amount of time
-time.sleep(wait_time_seconds)
+# # Wait for the generated amount of time
+# time.sleep(wait_time_seconds)
 
-print("Done waiting. Giving Kudos...")
+# print("Done waiting. Giving Kudos...")
 
 chrome_options = Options()
 chrome_options.add_argument('--no-sandbox')
@@ -60,7 +60,7 @@ for k in range(0,len(kudos)):
 time.sleep(2)
 
 first_kudos = driver.find_elements(By.XPATH, "//button[@title='Be the first to give kudos!']")
-print("First Kudos count is {}".format(len(first_kudos)))
+print("First Kudos count is {}".format(len(first_kudos)-1))
 for k in range(0,len(first_kudos)):
     athlete = get_athlete_name(kudos[k])
     print(athlete)
