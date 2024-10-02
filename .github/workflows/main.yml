@@ -22,4 +22,4 @@ jobs:
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
             docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/strava-kudos:${{ github.sha }}
-            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
+            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/strava-kudos:${{ github.sha }}
