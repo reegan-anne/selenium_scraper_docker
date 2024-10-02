@@ -29,4 +29,4 @@ jobs:
           with:
             azcliversion: latest
             inlineScript: |
-              az acr task create --name timertask --registry acrstrava01.azurecr.io --schedule "55 11 * * *" --context /dev/null
+              az acr task create --name timertask --registry acrstrava01.azurecr.io --cmd strava-kudos --schedule "25 12 * * *" --context /dev/null
