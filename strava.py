@@ -60,7 +60,7 @@ for k in range(0,len(kudos)):
 time.sleep(2)
 
 first_kudos = driver.find_elements(By.XPATH, "//button[@title='Be the first to give kudos!']")
-print("First Kudos count is {}".format(len(first_kudos)-1))
+print("First Kudos count is {}".format(len(first_kudos)))
 for k in range(0,len(first_kudos)):
     athlete = get_athlete_name(kudos[k])
     print(athlete)
