@@ -23,3 +23,10 @@ jobs:
         - run: |
             docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/strava-kudos:${{ github.sha }}
             docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/strava-kudos:${{ github.sha }}
+
+        - name: Azure CLI script
+          uses: azure/cli@v2
+          with:
+            azcliversion: latest
+            inlineScript: |
+              az acr task create --name timertask --registry acrstrava01.azurecr.io --schedule "55 11 * * *" --context /dev/null
